@@ -11,8 +11,6 @@ jobs:
     # The list of steps that the action will go through
     steps:
       - uses: actions/checkout@v1
-        with:
-          node-version: 16
       - run: yarn
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
@@ -21,4 +19,3 @@ jobs:
           #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          node-version: 16
